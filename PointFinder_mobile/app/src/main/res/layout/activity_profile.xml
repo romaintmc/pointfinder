@@ -1,0 +1,233 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imgProfileIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/baseline_account_circle_24"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"/>
+
+        <ToggleButton
+            android:id="@+id/toggleUsername"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FDEED6"
+            android:textColor="@android:color/black"
+            android:textOff="Change/set up my user name"
+            android:textOn="Change/set up my user name" />
+
+        <LinearLayout
+            android:id="@+id/panel_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/profile_new_username"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New user name"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/mdp_current"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your password"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btnusername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Save" />
+        </LinearLayout>
+
+        <!-- Section for changing email -->
+        <ToggleButton
+            android:id="@+id/toggleEmail"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FDEED6"
+            android:textColor="@android:color/black"
+            android:textOff="Change my email"
+            android:textOn="Change my email" />
+
+        <LinearLayout
+            android:id="@+id/panelEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/profile_current_email"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Current email"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/profile_new_email"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New email"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/profile_confirm_new_email"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm email"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/mdp_mail"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your password"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btnSaveEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Save" />
+        </LinearLayout>
+
+        <!-- Section for changing password -->
+        <ToggleButton
+            android:id="@+id/togglePassword"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FDEED6"
+            android:textColor="@android:color/black"
+            android:textOff="Change my password"
+            android:textOn="Change my password" />
+
+        <LinearLayout
+            android:id="@+id/panelPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/profile_current_password"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Current password"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/profile_new_password"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New password"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/profile_confirm_new_password"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm password"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btnSavePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Save" />
+
+
+        </LinearLayout>
+
+        <!-- Section for deleting account -->
+        <ToggleButton
+            android:id="@+id/toggleDeleteAccount"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FDEED6"
+            android:textColor="@android:color/black"
+            android:textOff="Delete account"
+            android:textOn="Delete account" />
+
+        <LinearLayout
+            android:id="@+id/panelDeleteAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/profile_delete_email"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your email"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/profile_delete_password"
+                android:theme="@style/EditTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your password"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btnDeleteAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="Save" />
+
+        </LinearLayout>
+
+    <!-- Return button -->
+        <Button
+            android:id="@+id/btnReturn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Return"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+
+</ScrollView>
+

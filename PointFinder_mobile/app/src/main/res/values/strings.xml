@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PointFinderV1</string>
+    <string name="show_bottom_sheet">Afficher le menu</string>
+    <string name="profile">Afficher la page de profil</string>
+    <string name="logout">se déconnecter</string>
+</resources>

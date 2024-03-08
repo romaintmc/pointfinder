@@ -20,7 +20,6 @@ Structure du front :
 			* Navigation Intuitive : Une navigation fluide grâce à un en-tête clair et une vue d'accueil organisée.
 			* Bannière Interactives : Mise en avant des sous-sections de la page et à la page d'authenfication à travers une bannière dynamique.
 	 		* Description : Une section dédiée à la description du service.
-			* Tutoriels : Vidéo vous montrant comment naviguer sur le site.
 			* Présentation de l'Équipe : Rencontre avec l'équipe derrière PointFinder, leurs rôles et leur expertise.
 			* Contact : Un formulaire de contact pour les questions, le support ou les demandes de collaboration.
 

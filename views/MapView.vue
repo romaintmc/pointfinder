@@ -13,7 +13,8 @@
       :handicap="currentMarkerData.handicap"
       :description= "currentMarkerData.description"
       :sous_description= "currentMarkerData.sous_description"
-      @closed="handlePopSidebarClosed" 
+      @closed="handlePopSidebarClosed"
+
     />
     <!-- Composant Sidebar -->
     <Sidebar
@@ -23,6 +24,7 @@
     />
     <!-- Composant MapComponent -->
     <MapComponent
+      ref="mapComponentRef"
       :selectedTypes="selectedTypes"
       @markerClicked="handleMarkerClick"
     />
@@ -30,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import { ref, reactive } from 'vue';
+import { ref, reactive, nextTick } from 'vue';
 
 import PopSidebar from '../components/PopSidebarComponent.vue';
 import Sidebar from '../components/SidebarComponent.vue';
@@ -44,6 +46,7 @@ export default {
     MapComponent,
   },
   setup() {
+    const mapComponentRef = ref(null);
     // Définition des types des données des marqueurs
     interface MarkerData {
       libelle: string;
@@ -53,6 +56,10 @@ export default {
       handicap: string;
       description: string;
       sous_description: string;
+      dataRoute: {
+        durationInMinutes: number | null;
+        distanceInMeters: number | null;
+      } | null;
     }
 
     // Références réactives et réactives initiales
@@ -65,7 +72,11 @@ export default {
       phone_number: '',
       handicap: '',
       description: '',
-      sous_description: ''
+      sous_description: '',
+      dataRoute: {
+        durationInMinutes: null,
+        distanceInMeters: null
+      }
     });
     const popSidebarRef = ref<{ show: () => void } | null>(null); // Référence au PopSidebar pour afficher
 
@@ -83,12 +94,18 @@ export default {
     const handlePopSidebarClosed = () => {
       // Réafficher la Sidebar lorsque PopSidebar est fermé
       isSidebarVisible.value = true;
+      // Accéder directement à MapComponent et appeler une méthode pour clear l'itinéraire en cours
+      nextTick(() => {
+        if (mapComponentRef.value) {
+          (mapComponentRef.value as typeof MapComponent).handleClearRoute();
+        }
+      });
     };
 
     const handleMarkerClick = (data: MarkerData) => {
       // Masquer la Sidebar et afficher PopSidebar lors du clic sur un marqueur
       isSidebarVisible.value = false;
-      currentMarkerData.value = data; // Assurez-vous que cette ligne attribue correctement les données
+      currentMarkerData.value = {...data};
       if (popSidebarRef.value) {
         popSidebarRef.value.show();
       }
@@ -101,7 +118,8 @@ export default {
       handleSelectedTypesUpdate,
       handleMarkerClick,
       isSidebarVisible,
-      handlePopSidebarClosed
+      handlePopSidebarClosed,
+      mapComponentRef
     };
   },
 };

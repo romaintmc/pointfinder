@@ -108,7 +108,7 @@
         // Utiliser une expression régulière pour vérifier que le login ne contient que des lettres et des chiffres
         const validLoginRegex = /^[a-zA-Z0-9]+$/;
 
-        if (!this.login.match(validLoginRegex)) {
+        if (!this.loginsignup.match(validLoginRegex)) {
           // Si le login contient des caractères non autorisés, afficher un message d'erreur
           this.toast.error("Signup error: username must contain only letters and numbers", {
             position: "top-right",
@@ -133,7 +133,7 @@
             });
             if (response.status === 200) {
               console.log('Inscription réussie');
-              this.sessionStorageCredentials();
+              this.sessionStorageCredentials(this.loginsignup);
             } else {
               this.toast.error("Subscription error: user already exists or deleted", {
                 position: "top-right",
@@ -173,7 +173,7 @@
           if (response.status === 200) {
             // Connexion réussie
             console.log('Connexion réussie:');
-            this.sessionStorageCredentials();
+            this.sessionStorageCredentials(this.loginsignin);
           } else {
             this.toast.error("Connection error: login or password incorrect", {
               position: "top-right",
@@ -190,7 +190,7 @@
           });
         }
       },
-      async sessionStorageCredentials() {
+      async sessionStorageCredentials(login) {
         // On récupère toutes les informations liées à l'utilisateur connecté 
         try {
           const response = await fetch('https://pointfinder.alwaysdata.net/session', {
@@ -199,7 +199,7 @@
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                auth: this.loginsignin
+                auth: login
               }),
             });
             if (response.status === 200) {

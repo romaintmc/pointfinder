@@ -9,7 +9,7 @@ Ce projet est une application web et mobile conçue pour aider les utilisateurs 
 
 Notre application a été déployé avec plusieurs technologies :
 
-- L'application mobile a été conçue sur Android Studio, dans le langage Java
+- L'application mobile a été conçue sur Android Studio, dans le langage Java, avec Android 9 et téléphone Crosscall X4
 - L'application web a été conçue en VueJS et JavaScript, en intégrant la carte OpenStreetMap et des modules Leaflet. Puis, elle a été déployé sur des serveurs AlwaysData.
 
 Plusieurs technologies tierces ont aussi été utilisés pour ce projet :

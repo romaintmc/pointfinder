@@ -12,6 +12,15 @@ Notre application a été déployé avec plusieurs technologies :
 - L'application mobile a été conçue sur Android Studio, dans le langage Java, avec Android 9 et téléphone Crosscall X4
 - L'application web a été conçue en VueJS et JavaScript, en intégrant la carte OpenStreetMap et des modules Leaflet. Puis, elle a été déployé sur des serveurs AlwaysData.
 
+Versions des technologies utilisées :
+
+- VueJS 3.3.9
+- NodeJS 21.6.0
+- Express 4.18.2
+- MariaDB 3.2.2
+- Bycrypt 5.1.1
+- nodejs-nodemailer-outlook 1.2.4
+
 Plusieurs technologies tierces ont aussi été utilisés pour ce projet :
 
 - FileZilla : ce logiciel permet de transférer nos fichiers sur les serveurs AlwaysData

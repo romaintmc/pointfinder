@@ -337,6 +337,30 @@ app.post('/send-reset-password-email', async (req, res) => {
   }
 });
 
+app.post('/send-email', async (req, res) => {
+  const { first_name, last_name, object, body, mail } = req.body;
+  try{
+    const contact = "Contact : " + first_name + " " + last_name + " (" + mail + ")";
+    const corps = contact + "\n" + body;
+    nodeoutlook.sendEmail({
+          auth: {
+            user: "pointfinder@outlook.fr",
+            pass: "N:2^$2Nnk2a6Sc"
+          },
+          from: "pointfinder@outlook.fr",
+          to: "pointfinder.projet@gmail.com",
+          subject: object,
+          text: corps,
+          onError: (e) => console.log(e),
+          onSuccess: (i) => res.status(200).send("Mail envoyé")
+        }
+    );
+  }
+  catch (error){
+    res.status(500).send("Erreur lors de l'envoi de l'adresse mail")
+  }
+});
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -156,13 +156,13 @@
                   this.showUpdateMailModal=false;
                   this.toast.success("Email address successfully updated !", {
                     position: "top-right",
-                    timeout: 5000,
+                    timeout: 3000,
                     closeButton: "button",
                   });
                 } else {
                   this.toast.error("Update email error: please enter an existing email address", {
                     position: "top-right",
-                    timeout: 5000,
+                    timeout: 3000,
                     closeButton: "button",
                   });
                 }
@@ -176,7 +176,7 @@
             else{
               this.toast.error("Update email error: email adresses do not match", {
                 position: "top-right",
-                timeout: 5000,
+                timeout: 3000,
                 closeButton: "button",
               });
             }
@@ -200,13 +200,13 @@
                   this.showUpdatePasswordModal=false;
                   this.toast.success("Password successfully updated !", {
                     position: "top-right",
-                    timeout: 5000,
+                    timeout: 3000,
                     closeButton: "button",
                   });
                 } else {
                   this.toast.error("Update password error: please verify the email you entered", {
                     position: "top-right",
-                    timeout: 5000,
+                    timeout: 3000,
                     closeButton: "button",
                   });
                 }
@@ -220,7 +220,7 @@
             else{
               this.toast.error("Update password error: passwords do not match", {
                 position: "top-right",
-                timeout: 5000,
+                timeout: 3000,
                 closeButton: "button",
               });
             }
@@ -244,7 +244,7 @@
                 } else {
                   this.toast.error("Account suspension error: please enter an existing email or password", {
                     position: "top-right",
-                    timeout: 5000,
+                    timeout: 3000,
                     closeButton: "button",
                   });
                 }

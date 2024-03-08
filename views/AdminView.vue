@@ -151,7 +151,7 @@
                             console.log('Utilisateur activé avec succès');
                             this.toast.success("User successfully activated !", {
                                 position: "top-right",
-                                timeout: 5000,
+                                timeout: 3000,
                                 closeButton: "button",
                             });
                             this.showActivateUserModal = false; // Fermez la fenêtre modale
@@ -161,7 +161,7 @@
                             console.log('Erreur lors de l\'activation de l\'utilisateur');
                             this.toast.error("Error activating user.", { 
                                 position: "top-right", 
-                                timeout: 5000, 
+                                timeout: 3000, 
                                 closeButton: "button",
                             });
                         }
@@ -169,7 +169,7 @@
                         console.error('Erreur lors de l\'activation:', error);
                         this.toast.error("Error activating user.", { 
                             position: "top-right", 
-                            timeout: 5000, 
+                            timeout: 3000, 
                             closeButton: "button",
                         });
                     }
@@ -216,13 +216,13 @@
                             this.fetchUsers(); //Recharger la liste des utilisateurs après suppression
                             this.toast.success("User successfully deleted !", {
                                 position: "top-right",
-                                timeout: 5000,
+                                timeout: 3000,
                                 closeButton: "button",
                             });
                         } else {
                             this.toast.error("Failed to delete user", { 
                                 position: "top-right", 
-                                timeout: 5000, 
+                                timeout: 3000, 
                                 closeButton: "button", });
                         }
                     } catch (error) {
@@ -234,7 +234,7 @@
                     const userKey = userToUpdate._uid.toString();
 
                     if (!userToUpdate.mail || !userToUpdate.originalMail || !userToUpdate.login) {
-                        this.toast.error("Missing user information for update.", { position: "top-right", timeout: 5000, closeButton: "button", });
+                        this.toast.error("Missing user information for update.", { position: "top-right", timeout: 3000, closeButton: "button", });
                         return;
                     }
 
@@ -255,18 +255,18 @@
                             delete this.editingUsers[userKey];
                             this.showUpdateUserModal = false;
                             this.selectedUserForUpdate = null;
-                            this.toast.success("User successfully updated!", { position: "top-right", timeout: 5000, closeButton: "button"});
+                            this.toast.success("User successfully updated!", { position: "top-right", timeout: 3000, closeButton: "button"});
                             
                             // Recharger la liste des utilisateurs pour afficher les modifications
                             await this.fetchUsers(); 
 
                         } else {
                             console.error("Error updating user.");
-                            this.toast.error("Failed to update user.", { position: "top-right", timeout: 5000, closeButton: "button"});
+                            this.toast.error("Failed to update user.", { position: "top-right", timeout: 3000, closeButton: "button"});
                         }
                     } catch (error) {
                         console.error("Update error:", error);
-                        this.toast.error("Update failed due to an error.", { position: "top-right", timeout: 5000, closeButton: "button"});
+                        this.toast.error("Update failed due to an error.", { position: "top-right", timeout: 3000, closeButton: "button"});
                     }
                 },
 

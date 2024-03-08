@@ -43,8 +43,6 @@
           </div>
         </div>
       </tabs>
-      <!-- Zone où le message toast sera affiché -->
-      <div v-if="showErrorMessage" class="toast-container"><span class="toast-message">{{ errorMessage }}</span></div>
     </div>
   </div>
 
@@ -62,7 +60,7 @@
   
 <script>
   import Tabs from "../components/TabsComponent.vue";
-  import { useToast } from 'vue-toastification'
+  import { useToast } from 'vue-toastification';
   
   export default {
     // Fonction de setup pour permettre l'utilisation de Toast sur cette page
@@ -112,7 +110,7 @@
           // Si le login contient des caractères non autorisés, afficher un message d'erreur
           this.toast.error("Signup error: username must contain only letters and numbers", {
             position: "top-right",
-            timeout: 5000,
+            timeout: 3000,
             closeButton: "button",
           });
           return; // Arrêter l'exécution si le login est invalide
@@ -137,7 +135,7 @@
             } else {
               this.toast.error("Subscription error: user already exists or deleted", {
                 position: "top-right",
-                timeout: 5000,
+                timeout: 3000,
                 closeButton: "button",
               });
             }
@@ -145,7 +143,7 @@
             console.error('Erreur:', error);
             this.toast.error("Server error", {
               position: "top-right",
-              timeout: 5000,
+              timeout: 3000,
               closeButton: "button",
             });
           }
@@ -153,7 +151,7 @@
         else{
           this.toast.error("Subscription error: passwords do not match", {
               position: "top-right",
-              timeout: 5000,
+              timeout: 3000,
               closeButton: "button",
             });
           }
@@ -177,7 +175,7 @@
           } else {
             this.toast.error("Connection error: login or password incorrect", {
               position: "top-right",
-              timeout: 5000,
+              timeout: 3000,
               closeButton: "button",
             });
           }
@@ -185,7 +183,7 @@
           console.error('Erreur:', error);
           this.toast.error("Server error", {
             position: "top-right",
-            timeout: 5000,
+            timeout: 3000,
             closeButton: "button",
           });
         }
@@ -237,7 +235,7 @@
           } else {
             this.toast.error("Reset password error: please enter a valid email", {
               position: "bottom-center",
-              timeout: 5000,
+              timeout: 3000,
               closeButton: "button",
             });
           }
@@ -263,14 +261,14 @@
             console.log(newPassword);
             this.toast.success("Password successfully updated : please check your emails", {
               position: "bottom-center",
-              timeout: 5000,
+              timeout: 3000,
               closeButton: "button",
             });
             this.showResetPasswordModal = false;
           } else {
             this.toast.error("Server error: failed to change password", {
               position: "bottom-center",
-              timeout: 5000,
+              timeout: 3000,
               closeButton: "button",
             });
           }
@@ -361,7 +359,6 @@
       justify-content: center;
       align-items: center;
     }
-
     .modal {
       position: relative;
       background-color: white;
@@ -370,25 +367,6 @@
       display: flex;
       flex-direction: column;
       text-align: center;
-    }
-
-    .toast-container {
-      margin-top: 3em;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .toast-message {
-      background-color: rgb(255, 255, 255);
-      border: none;
-      box-shadow: 0 6px 8px rgba(0,0,0,0.1);;
-      color: black;
-      padding: 0.8em;
-      font-size: 14px;
-      border-radius: 4px;
-      border: 1px solid black;
-      width: 75%
     }
 </style>
   

@@ -11,10 +11,6 @@
     <div class="grid-item" id="description">
       <Description />
     </div>
-    <!-- Grille pour le composant Tutoriel -->
-    <div class="grid-item" id="tutoriel">
-      <Tutoriel />
-    </div>
     <!-- Grille pour le composant Team -->
     <div class="grid-item" id="equipe">
       <Team />
@@ -31,7 +27,6 @@
   import Bandeau from '../components/HeaderItem.vue';
   import Description from '../components/DescriptionItem.vue';
   import Banniere from '../components/BanniereItem.vue';
-  import Tutoriel from '../components/TutoItem.vue';
   import Team from '../components/TeamItem.vue';
   import Contact from '../components/ContactItem.vue';
 
@@ -40,7 +35,6 @@
       Bandeau, // Incluez votre composant d'en-tête dans la liste des composants utilisés
       Banniere,
       Description,
-      Tutoriel,
       Team,
       Contact,
     },

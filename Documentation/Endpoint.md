@@ -105,6 +105,19 @@ PUT :
           - 404 : Utilisateur non trouvé
           - 500 : Erreur serveur
 
+- https://pointfinder.alwaysdata.net/send-reset-password-email : Reset le mot de passe de l'utilisateur
+      Input : { "mail" : "test@mail.com" }
+      Status :
+          - 200 : Mot de passe mis à jour
+          - 404 : Utilisateur non trouvé
+          - 500 : Erreur serveur
+
+- https://pointfinder.alwaysdata.net/send-email : Formulaire de contact
+      Input : { "mail" : "test@mail.com", "first_name" : "romain", "last_name" : "tamic", "object":"test", "body":"test" }
+      Status :
+          - 200 : Mot de passe mis à jour
+          - 500 : Erreur serveur
+
 - https://pointfinder.alwaysdata.net/changehabilitation : Change le niveau d'habilitation de l'utilisateur
       Input : { "mail" : "test@mail.com", "id_habilitation" : 10 }
       Status :
